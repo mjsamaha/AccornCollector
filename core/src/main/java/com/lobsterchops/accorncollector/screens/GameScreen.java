@@ -13,6 +13,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 
 public class GameScreen implements Screen {
 	
@@ -30,6 +31,8 @@ public class GameScreen implements Screen {
     Texture backgroundTexture;
     Texture playerTexture;
     Texture accornTexture;
+    
+    Sprite playerSprite;
     
     Sound collectSound;
     Sound menuInteractionSound;
@@ -57,7 +60,14 @@ public class GameScreen implements Screen {
     	viewport = new FitViewport(8, 6);
     	
     	backgroundTexture = new Texture("background.png");
+    	
     	playerTexture = new Texture("player.png");
+    	playerSprite = new Sprite(playerTexture);
+    	playerSprite.setSize(1, 1);
+    	
+    	
+    	
+    	
     	
         // Game screen is now active
         // Initialize your game state here
@@ -73,6 +83,8 @@ public class GameScreen implements Screen {
     public void render(float delta) {
         // Handle input
         handleInput();
+        // player input
+        playerInput();
         // logic();
         draw();
         
@@ -101,11 +113,16 @@ public class GameScreen implements Screen {
     	
     	batch.draw(backgroundTexture, 0, 0, worldWidth, worldHeight);
     	
-    	batch.draw(playerTexture, 0, 0, 1, 1);
+    	// batch.draw(playerTexture, 0, 0, 1, 1);
+    	playerSprite.draw(batch);
     	
     	
     	
     	batch.end();
+    }
+    
+    private void playerInput() {
+    	
     }
     
     

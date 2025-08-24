@@ -38,6 +38,8 @@ public class GameScreen implements Screen {
     
     Array<Sprite> accornSprites;
     
+    float accornTimer;
+    
     Sound collectSound;
     Sound menuInteractionSound;
     
@@ -105,7 +107,7 @@ public class GameScreen implements Screen {
     	
     	Sprite accornSprite = new Sprite(accornTexture);
     	accornSprite.setSize(accornWidth, accornHeight);
-    	accornSprite.setX(0);
+    	accornSprite.setX(MathUtils.random(0f, worldWidth - accornWidth));
     	accornSprite.setY(worldHeight);
     	accornSprites.add(accornSprite);
     	
@@ -122,8 +124,23 @@ public class GameScreen implements Screen {
     	
     	float delta = Gdx.graphics.getDeltaTime();
     	
-    	for (Sprite accornSprite : accornSprites) {
-    		accornSprite.translateY(-2f * delta);
+    	// Loop through the sprites backwards to prevent out of bounds errors
+        for (int i = accornSprites.size - 1; i >= 0; i--) {
+            Sprite accornSprite = accornSprites.get(i); // Get the sprite from the list
+            float dropWidth = accornSprite.getWidth();
+            float dropHeight = accornSprite.getHeight();
+
+            accornSprite.translateY(-2f * delta);
+
+            // if the top of the drop goes below the bottom of the view, remove it
+            if (accornSprite.getY() < -dropHeight) accornSprites.removeIndex(i);
+        }
+        
+    	
+    	accornTimer += delta;
+    	if (accornTimer > 1f) {
+    		accornTimer = 0;
+    		createAccornDroppings();
     	}
     }
     

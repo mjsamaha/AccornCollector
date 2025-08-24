@@ -57,6 +57,7 @@ public class GameScreen implements Screen {
     	viewport = new FitViewport(8, 6);
     	
     	backgroundTexture = new Texture("background.png");
+    	playerTexture = new Texture("player.png");
     	
         // Game screen is now active
         // Initialize your game state here
@@ -99,6 +100,8 @@ public class GameScreen implements Screen {
     	float worldHeight = viewport.getWorldHeight();
     	
     	batch.draw(backgroundTexture, 0, 0, worldWidth, worldHeight);
+    	
+    	batch.draw(playerTexture, 0, 0, 1, 1);
     	
     	
     	

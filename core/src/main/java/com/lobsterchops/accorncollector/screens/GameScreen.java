@@ -69,7 +69,7 @@ public class GameScreen implements Screen {
     	playerSprite = new Sprite(playerTexture);
     	playerSprite.setSize(1, 1);
     	
-    	accornTexture = new Texture(""); // TODO: create pixel art for accorn
+    	accornTexture = new Texture("accorn.png"); // TODO: create pixel art for accorn
     	
     	accornSprites = new Array<>();
     	

@@ -56,6 +56,8 @@ public class GameScreen implements Screen {
     	
     	viewport = new FitViewport(8, 6);
     	
+    	backgroundTexture = new Texture("background.png");
+    	
         // Game screen is now active
         // Initialize your game state here
     	
@@ -74,11 +76,10 @@ public class GameScreen implements Screen {
         draw();
         
         // Clear screen with black background
-        Gdx.gl.glClearColor(0, 0, 0, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        // Gdx.gl.glClearColor(0, 0, 0, 1);
+        // Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         
-        // TODO: Add your game logic here
-        // This is where you'll render your game objects, handle updates, etc.
+        
         
        
     }
@@ -93,6 +94,13 @@ public class GameScreen implements Screen {
     	batch.setProjectionMatrix(viewport.getCamera().combined);
     	
     	batch.begin();
+    	
+    	float worldWidth = viewport.getWorldWidth();
+    	float worldHeight = viewport.getWorldHeight();
+    	
+    	batch.draw(backgroundTexture, 0, 0, worldWidth, worldHeight);
+    	
+    	
     	
     	batch.end();
     }

@@ -1,0 +1,12 @@
+Foundation:
+- player
+- accorn
+- background
+
+sound
+- collectSound
+- menu interaction sound
+
+music
+- menu music
+- gameplay music

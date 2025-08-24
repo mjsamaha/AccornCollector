@@ -3,18 +3,39 @@ package com.lobsterchops.accorncollector.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.utils.ScreenUtils;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 
 public class GameScreen implements Screen {
+	
     private ScreenManager screenManager;
+    
+    FitViewport viewport;
+    
+    /* Fonts */
     private SpriteBatch batch;
     private BitmapFont font;
     private GlyphLayout layout;
     private float gameTime;
+    
+    /* Graphics */
+    Texture backgroundTexture;
+    Texture playerTexture;
+    Texture accornTexture;
+    
+    Sound collectSound;
+    Sound menuInteractionSound;
+    
+    Music gameplayMusic;
+   
     
     public GameScreen(ScreenManager screenManager) {
         this.screenManager = screenManager;
@@ -27,17 +48,30 @@ public class GameScreen implements Screen {
         font.getData().setScale(1.5f);
         font.setColor(Color.WHITE);
     }
+    
+    
 
     @Override
     public void show() {
+    	
+    	viewport = new FitViewport(8, 6);
+    	
         // Game screen is now active
         // Initialize your game state here
+    	
+    	// add in assets --> name = new Texture("filename");
+    	
+    	// sound = Gdx.audio.newSound(Gdx.files.internal("file"));
+    	// music = Gdx.audio.newMusic(Gdx.files.internal("file"));
+    	
     }
 
     @Override
     public void render(float delta) {
         // Handle input
         handleInput();
+        // logic();
+        draw();
         
         // Clear screen with black background
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -46,18 +80,24 @@ public class GameScreen implements Screen {
         // TODO: Add your game logic here
         // This is where you'll render your game objects, handle updates, etc.
         
-        // Uncomment the lines below if you want to show the ESC instruction on screen
-        /*
-        batch.begin();
-        String backText = "Press ESC to return to menu";
-        font.getData().setScale(1.0f);
-        layout.setText(font, backText);
-        float backX = (Gdx.graphics.getWidth() - layout.width) / 2;
-        float backY = 30f; // Bottom of screen
-        font.draw(batch, backText, backX, backY);
-        batch.end();
-        */
+       
     }
+    
+    private void logic() {
+    	
+    }
+    
+    private void draw() {
+    	ScreenUtils.clear(Color.BLACK);
+    	viewport.apply();
+    	batch.setProjectionMatrix(viewport.getCamera().combined);
+    	
+    	batch.begin();
+    	
+    	batch.end();
+    }
+    
+    
     
     private void handleInput() {
         if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
@@ -73,6 +113,7 @@ public class GameScreen implements Screen {
     @Override
     public void resize(int width, int height) {
         // Handle screen resize
+    	viewport.update(width, height, true);
     }
 
     @Override

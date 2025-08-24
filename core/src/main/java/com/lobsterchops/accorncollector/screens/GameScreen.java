@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
@@ -31,18 +32,21 @@ public class GameScreen implements Screen {
     
     /* Graphics */
     Texture backgroundTexture;
+    
     Texture playerTexture;
+    Rectangle playerRectangle;
+    
     Texture accornTexture;
+    Rectangle accornRectangle;
     
     Sprite playerSprite;
     
     Array<Sprite> accornSprites;
+   
     
     float accornTimer;
     
-    Sound collectSound;
-    Sound menuInteractionSound;
-    
+    Sound collectSound;    
     Music gameplayMusic;
    
     
@@ -64,23 +68,29 @@ public class GameScreen implements Screen {
     public void show() {
     	
     	viewport = new FitViewport(8, 6);
+   
     	
     	backgroundTexture = new Texture("background.png");
     	
     	playerTexture = new Texture("player.png");
     	playerSprite = new Sprite(playerTexture);
     	playerSprite.setSize(1, 1);
+    	playerRectangle = new Rectangle();
     	
     	accornTexture = new Texture("accorn.png"); // TODO: create pixel art for accorn
+    	accornRectangle = new Rectangle();
     	
     	accornSprites = new Array<>();
     	
     	createAccornDroppings();
     	
+    	collectSound = Gdx.audio.newSound(Gdx.files.internal("collect.wav"));
+    	gameplayMusic = Gdx.audio.newMusic(Gdx.files.internal("Amber Forest.mp3"));
     	
-    	
-    	
-    	
+    	gameplayMusic.setLooping(true);
+    	gameplayMusic.setVolume(.5f);
+    	gameplayMusic.play();
+
         // Game screen is now active
         // Initialize your game state here
     	
@@ -123,17 +133,24 @@ public class GameScreen implements Screen {
     	playerSprite.setX(MathUtils.clamp(playerSprite.getX(), 0, worldWidth - playerWidth));
     	
     	float delta = Gdx.graphics.getDeltaTime();
+    	playerRectangle.set(playerSprite.getX(), playerSprite.getY(), playerWidth, playerHeight);
+    	
     	
     	// Loop through the sprites backwards to prevent out of bounds errors
         for (int i = accornSprites.size - 1; i >= 0; i--) {
             Sprite accornSprite = accornSprites.get(i); // Get the sprite from the list
-            float dropWidth = accornSprite.getWidth();
-            float dropHeight = accornSprite.getHeight();
-
+            float accornWidth = accornSprite.getWidth();
+            float accornHeight = accornSprite.getHeight();
+            
             accornSprite.translateY(-2f * delta);
+            accornRectangle.set(accornSprite.getX(), accornSprite.getY(), accornWidth, accornHeight);
 
             // if the top of the drop goes below the bottom of the view, remove it
-            if (accornSprite.getY() < -dropHeight) accornSprites.removeIndex(i);
+            if (accornSprite.getY() < -accornHeight) accornSprites.removeIndex(i);
+            else if (playerRectangle.overlaps(accornRectangle)) {
+            	accornSprites.removeIndex(i);
+            	collectSound.play();
+            }
         }
         
     	
@@ -150,6 +167,7 @@ public class GameScreen implements Screen {
     	batch.setProjectionMatrix(viewport.getCamera().combined);
     	
     	batch.begin();
+    	
     	
     	float worldWidth = viewport.getWorldWidth();
     	float worldHeight = viewport.getWorldHeight();

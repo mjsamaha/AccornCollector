@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
@@ -81,24 +82,20 @@ public class GameScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        // Handle input
         handleInput();
-        // player input
         playerInput();
-        // logic();
+        logic();
         draw();
-        
-        // Clear screen with black background
-        // Gdx.gl.glClearColor(0, 0, 0, 1);
-        // Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        
-        
-        
-       
     }
     
     private void logic() {
+    	float worldWidth = viewport.getWorldWidth();
+    	float worldHeight = viewport.getWorldHeight();
     	
+    	float playerWidth = playerSprite.getWidth();
+    	float playerHeight = playerSprite.getHeight();
+    	
+    	playerSprite.setX(MathUtils.clamp(playerSprite.getX(), 0, worldWidth - playerWidth));
     }
     
     private void draw() {
@@ -122,7 +119,13 @@ public class GameScreen implements Screen {
     }
     
     private void playerInput() {
-    	
+    	float speed = 5f;
+    	float delta = Gdx.graphics.getDeltaTime();
+    	if (Gdx.input.isKeyPressed(Input.Keys.D)) {
+    		playerSprite.translateX(speed * delta);
+    	} else if (Gdx.input.isKeyPressed(Input.Keys.A)) {
+    		playerSprite.translateX(-speed * delta);
+    	}
     }
     
     

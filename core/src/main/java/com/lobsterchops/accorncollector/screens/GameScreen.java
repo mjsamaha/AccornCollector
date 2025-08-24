@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
@@ -34,6 +35,8 @@ public class GameScreen implements Screen {
     Texture accornTexture;
     
     Sprite playerSprite;
+    
+    Array<Sprite> accornSprites;
     
     Sound collectSound;
     Sound menuInteractionSound;
@@ -66,6 +69,12 @@ public class GameScreen implements Screen {
     	playerSprite = new Sprite(playerTexture);
     	playerSprite.setSize(1, 1);
     	
+    	accornTexture = new Texture(""); // TODO: create pixel art for accorn
+    	
+    	accornSprites = new Array<>();
+    	
+    	createAccornDroppings();
+    	
     	
     	
     	
@@ -88,6 +97,20 @@ public class GameScreen implements Screen {
         draw();
     }
     
+    private void createAccornDroppings() {
+    	float accornWidth = 1;
+    	float accornHeight = 1;
+    	float worldWidth = viewport.getWorldWidth();
+    	float worldHeight = viewport.getWorldHeight();
+    	
+    	Sprite accornSprite = new Sprite(accornTexture);
+    	accornSprite.setSize(accornWidth, accornHeight);
+    	accornSprite.setX(0);
+    	accornSprite.setY(worldHeight);
+    	accornSprites.add(accornSprite);
+    	
+    }
+    
     private void logic() {
     	float worldWidth = viewport.getWorldWidth();
     	float worldHeight = viewport.getWorldHeight();
@@ -96,6 +119,12 @@ public class GameScreen implements Screen {
     	float playerHeight = playerSprite.getHeight();
     	
     	playerSprite.setX(MathUtils.clamp(playerSprite.getX(), 0, worldWidth - playerWidth));
+    	
+    	float delta = Gdx.graphics.getDeltaTime();
+    	
+    	for (Sprite accornSprite : accornSprites) {
+    		accornSprite.translateY(-2f * delta);
+    	}
     }
     
     private void draw() {
@@ -112,6 +141,11 @@ public class GameScreen implements Screen {
     	
     	// batch.draw(playerTexture, 0, 0, 1, 1);
     	playerSprite.draw(batch);
+    	
+    	// draw ea accorn sprite
+    	for (Sprite accornSprite : accornSprites) {
+    		accornSprite.draw(batch);
+    	}
     	
     	
     	

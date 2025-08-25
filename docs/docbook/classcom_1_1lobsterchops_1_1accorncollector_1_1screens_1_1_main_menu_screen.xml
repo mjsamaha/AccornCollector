@@ -2,10 +2,20 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen" xml:lang="en-US">
 <title>com.lobsterchops.accorncollector.screens.MainMenuScreen Class Reference</title>
 <indexterm><primary>com.lobsterchops.accorncollector.screens.MainMenuScreen</primary></indexterm>
-<para>Inheritance diagram for com.lobsterchops.accorncollector.screens.MainMenuScreen:    <informalfigure>
+Inheritance diagram for com.lobsterchops.accorncollector.screens.MainMenuScreen:<para>
+    <informalfigure>
         <mediaobject>
             <imageobject>
-                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen.png"></imagedata>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for com.lobsterchops.accorncollector.screens.MainMenuScreen:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen__coll__graph.png"></imagedata>
             </imageobject>
         </mediaobject>
     </informalfigure>

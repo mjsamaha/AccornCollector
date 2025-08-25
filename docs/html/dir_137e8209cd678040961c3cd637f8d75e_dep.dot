@@ -1,0 +1,16 @@
+digraph "core/src/main/java/com/lobsterchops/accorncollector"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_3b0583e8e50edc61fa7831b461a2f5e9 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", label="lobsterchops", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_3b0583e8e50edc61fa7831b461a2f5e9.html",tooltip=""]
+  subgraph clusterdir_137e8209cd678040961c3cd637f8d75e {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_137e8209cd678040961c3cd637f8d75e.html",tooltip=""]
+    dir_137e8209cd678040961c3cd637f8d75e [shape=plaintext, label="accorncollector"];
+  dir_e5adf9857d909ef6d9961bf291f25c57 [label="screens", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_e5adf9857d909ef6d9961bf291f25c57.html",tooltip=""];
+  }
+  }
+}

@@ -1,7 +1,5 @@
  # AccornCollector
 
-[![Project Logo](https://github.com/mjsamaha/AccornCollector)](https://github.com/mjsamaha/AccornCollector)
-
 ## Description
 
 Recreation of libGDX's 'A Simple Game'.

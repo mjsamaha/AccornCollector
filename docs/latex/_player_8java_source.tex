@@ -1,0 +1,63 @@
+\doxysection{Player.\+java}
+\hypertarget{_player_8java_source}{}\label{_player_8java_source}\index{core/src/main/java/com/lobsterchops/accorncollector/Player.java@{core/src/main/java/com/lobsterchops/accorncollector/Player.java}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.lobsterchops.accorncollector;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00003}00003\ \textcolor{keyword}{import}\ com.badlogic.gdx.Gdx;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00004}00004\ \textcolor{keyword}{import}\ com.badlogic.gdx.Input;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00005}00005\ \textcolor{keyword}{import}\ com.badlogic.gdx.graphics.Texture;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00006}00006\ \textcolor{keyword}{import}\ com.badlogic.gdx.graphics.g2d.Sprite;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00007}00007\ \textcolor{keyword}{import}\ com.badlogic.gdx.graphics.g2d.SpriteBatch;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00008}00008\ \textcolor{keyword}{import}\ com.badlogic.gdx.math.MathUtils;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00009}00009\ \textcolor{keyword}{import}\ com.badlogic.gdx.math.Rectangle;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00010}00010\ \textcolor{keyword}{import}\ com.badlogic.gdx.utils.viewport.FitViewport;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00016}\mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1_player}{00016}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }Player\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Sprite\ sprite;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Rectangle\ bounds\ =\ \textcolor{keyword}{new}\ Rectangle();}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ speed\ =\ 5f;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00020}00020\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00021}00021\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ Player(Texture\ texture,\ \textcolor{keywordtype}{float}\ startX,\ \textcolor{keywordtype}{float}\ startY)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ sprite\ =\ \textcolor{keyword}{new}\ Sprite(texture);}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ sprite.setSize(1f,\ 1f);}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ sprite.setPosition(startX,\ startY);}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00027}00027\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00028}00028\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ update(\textcolor{keywordtype}{float}\ delta,\ FitViewport\ viewport)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ handleLocalInput(delta);}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ clampToWorld(viewport);}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ bounds.set(sprite.getX(),\ sprite.getY(),\ sprite.getWidth(),\ sprite.getHeight());}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00034}00034\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00035}00035\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ handleLocalInput(\textcolor{keywordtype}{float}\ delta)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Gdx.input.isKeyPressed(Input.Keys.D))\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ sprite.translateX(speed\ *\ delta);}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Gdx.input.isKeyPressed(Input.Keys.A))\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ sprite.translateX(-\/speed\ *\ delta);}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00043}00043\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00044}00044\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ clampToWorld(FitViewport\ viewport)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ worldWidth\ =\ viewport.getWorldWidth();}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ playerWidth\ =\ sprite.getWidth();}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ sprite.setX(MathUtils.clamp(sprite.getX(),\ 0f,\ worldWidth\ -\/\ playerWidth));}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00050}00050\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00051}00051\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ draw(SpriteBatch\ batch)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ sprite.draw(batch);}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00055}00055\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00056}00056\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{public}\ Rectangle\ getBounds()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bounds;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00060}00060\ \}}
+
+\end{DoxyCode}

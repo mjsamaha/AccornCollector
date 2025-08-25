@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="en-US">
+    <info>
+    <title>My Project</title>
+    </info>
+<chapter>
+    <title>Class Documentation</title>
+    <xi:include href="classcom_1_1lobsterchops_1_1accorncollector_1_1_accorn_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classcom_1_1lobsterchops_1_1accorncollector_1_1_main.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classcom_1_1lobsterchops_1_1accorncollector_1_1_player.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>File Documentation</title>
+    <xi:include href="_accorn_manager_8java_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_main_8java_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_player_8java_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_game_screen_8java_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_main_menu_screen_8java_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_screen_manager_8java_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

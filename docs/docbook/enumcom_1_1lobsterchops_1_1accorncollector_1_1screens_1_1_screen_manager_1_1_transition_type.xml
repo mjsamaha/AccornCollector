@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type" xml:lang="en-US">
+<title>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType Enum Reference</title>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type_1ad6885a09d41dbe4d7694d65a7287ba48">FADE</link></para>
+</listitem>
+            <listitem><para><link linkend="_enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type_1adbf44c00feeea248c483bb0b29c1821f">SLIDE_LEFT</link></para>
+</listitem>
+            <listitem><para><link linkend="_enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type_1aeab7d935757203c3ed4948ea634c0849">SLIDE_RIGHT</link></para>
+</listitem>
+            <listitem><para><link linkend="_enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type_1ad64a15b6be1d9d3bda214bbca0b76fae">SLIDE_UP</link></para>
+</listitem>
+            <listitem><para><link linkend="_enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type_1ab47c209c3a34fe366d43940e9de58e33">SLIDE_DOWN</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="__screen_manager_8java_source_1l00014">14</link> of file <link linkend="__screen_manager_8java_source">ScreenManager.java</link>.</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type_1ad6885a09d41dbe4d7694d65a7287ba48"/><section>
+    <title>FADE</title>
+<indexterm><primary>FADE</primary><secondary>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType</primary><secondary>FADE</secondary></indexterm>
+<para><computeroutput>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType.FADE</computeroutput></para><para>
+Definition at line <link linkend="__screen_manager_8java_source_1l00015">15</link> of file <link linkend="__screen_manager_8java_source">ScreenManager.java</link>.</para>
+</section>
+<anchor xml:id="_enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type_1ab47c209c3a34fe366d43940e9de58e33"/><section>
+    <title>SLIDE_DOWN</title>
+<indexterm><primary>SLIDE_DOWN</primary><secondary>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType</primary><secondary>SLIDE_DOWN</secondary></indexterm>
+<para><computeroutput>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType.SLIDE_DOWN</computeroutput></para><para>
+Definition at line <link linkend="__screen_manager_8java_source_1l00019">19</link> of file <link linkend="__screen_manager_8java_source">ScreenManager.java</link>.</para>
+</section>
+<anchor xml:id="_enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type_1adbf44c00feeea248c483bb0b29c1821f"/><section>
+    <title>SLIDE_LEFT</title>
+<indexterm><primary>SLIDE_LEFT</primary><secondary>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType</primary><secondary>SLIDE_LEFT</secondary></indexterm>
+<para><computeroutput>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType.SLIDE_LEFT</computeroutput></para><para>
+Definition at line <link linkend="__screen_manager_8java_source_1l00016">16</link> of file <link linkend="__screen_manager_8java_source">ScreenManager.java</link>.</para>
+</section>
+<anchor xml:id="_enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type_1aeab7d935757203c3ed4948ea634c0849"/><section>
+    <title>SLIDE_RIGHT</title>
+<indexterm><primary>SLIDE_RIGHT</primary><secondary>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType</primary><secondary>SLIDE_RIGHT</secondary></indexterm>
+<para><computeroutput>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType.SLIDE_RIGHT</computeroutput></para><para>
+Definition at line <link linkend="__screen_manager_8java_source_1l00017">17</link> of file <link linkend="__screen_manager_8java_source">ScreenManager.java</link>.</para>
+</section>
+<anchor xml:id="_enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type_1ad64a15b6be1d9d3bda214bbca0b76fae"/><section>
+    <title>SLIDE_UP</title>
+<indexterm><primary>SLIDE_UP</primary><secondary>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType</primary><secondary>SLIDE_UP</secondary></indexterm>
+<para><computeroutput>com.lobsterchops.accorncollector.screens.ScreenManager.TransitionType.SLIDE_UP</computeroutput></para><para>
+Definition at line <link linkend="__screen_manager_8java_source_1l00018">18</link> of file <link linkend="__screen_manager_8java_source">ScreenManager.java</link>.</para>
+</section>
+<para>
+The documentation for this enum was generated from the following file:</para>
+core/src/main/java/com/lobsterchops/accorncollector/screens/ScreenManager.java</section>
+</section>

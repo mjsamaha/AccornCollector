@@ -1,0 +1,78 @@
+\doxysection{Accorn\+Manager.\+java}
+\hypertarget{_accorn_manager_8java_source}{}\label{_accorn_manager_8java_source}\index{core/src/main/java/com/lobsterchops/accorncollector/AccornManager.java@{core/src/main/java/com/lobsterchops/accorncollector/AccornManager.java}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.lobsterchops.accorncollector;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00003}00003\ \textcolor{keyword}{import}\ com.badlogic.gdx.audio.Sound;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00004}00004\ \textcolor{keyword}{import}\ com.badlogic.gdx.graphics.Texture;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00005}00005\ \textcolor{keyword}{import}\ com.badlogic.gdx.graphics.g2d.Sprite;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00006}00006\ \textcolor{keyword}{import}\ com.badlogic.gdx.graphics.g2d.SpriteBatch;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00007}00007\ \textcolor{keyword}{import}\ com.badlogic.gdx.math.MathUtils;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00008}00008\ \textcolor{keyword}{import}\ com.badlogic.gdx.math.Rectangle;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00009}00009\ \textcolor{keyword}{import}\ com.badlogic.gdx.utils.Array;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00010}00010\ \textcolor{keyword}{import}\ com.badlogic.gdx.utils.viewport.FitViewport;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00016}\mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1_accorn_manager}{00016}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }AccornManager\ \{}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Texture\ texture;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Sound\ collectSound;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Array<Sprite>\ acorns\ =\ \textcolor{keyword}{new}\ Array<>();}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ spawnTimer\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ AccornManager(Texture\ texture,\ Sound\ collectSound)\ \{}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ this.texture\ =\ texture;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ this.collectSound\ =\ collectSound;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00027}00027\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00028}00028\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ createAccorn(FitViewport\ viewport)\ \{}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ acornWidth\ =\ 1f;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ acornHeight\ =\ 1f;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ worldWidth\ =\ viewport.getWorldWidth();}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ worldHeight\ =\ viewport.getWorldHeight();}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00034}00034\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00035}00035\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ Sprite\ spr\ =\ \textcolor{keyword}{new}\ Sprite(texture);}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ spr.setSize(acornWidth,\ acornHeight);}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ spr.setX(MathUtils.random(0f,\ worldWidth\ -\/\ acornWidth));}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ spr.setY(worldHeight);}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ acorns.add(spr);}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00042}00042\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00043}00043\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ update(\textcolor{keywordtype}{float}\ delta,\ FitViewport\ viewport,\ Rectangle\ playerBounds)\ \{}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ move\ existing\ acorns\ and\ handle\ collisions}}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ Rectangle\ acornRect\ =\ \textcolor{keyword}{new}\ Rectangle();}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ acorns.size\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)\ \{}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ Sprite\ a\ =\ acorns.get(i);}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ a.translateY(-\/2f\ *\ delta);}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ acornRect.set(a.getX(),\ a.getY(),\ a.getWidth(),\ a.getHeight());}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a.getY()\ <\ -\/a.getHeight())\ \{}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ acorns.removeIndex(i);}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (playerBounds.overlaps(acornRect))\ \{}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ acorns.removeIndex(i);}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collectSound\ !=\ \textcolor{keyword}{null})\ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ collectSound.play();}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00061}00061\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00062}00062\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ spawn\ timer}}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ spawnTimer\ +=\ delta;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (spawnTimer\ >\ 1f)\ \{}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ spawnTimer\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ createAccorn(viewport);}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00070}00070\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00071}00071\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ draw(SpriteBatch\ batch)\ \{}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Sprite\ s\ :\ acorns)\ s.draw(batch);}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_accorn_manager_8java_source_l00075}00075\ \ \ \ \ \}}
+
+\end{DoxyCode}

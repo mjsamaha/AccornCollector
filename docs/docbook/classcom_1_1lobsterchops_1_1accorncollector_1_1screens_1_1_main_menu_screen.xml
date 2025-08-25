@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen" xml:lang="en-US">
+<title>com.lobsterchops.accorncollector.screens.MainMenuScreen Class Reference</title>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.MainMenuScreen</primary></indexterm>
+<para>Inheritance diagram for com.lobsterchops.accorncollector.screens.MainMenuScreen:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1a6b110e23f3602805fde7a75356cf89ef">MainMenuScreen</link> (<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager">ScreenManager</link> screenManager)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1ac595a7a886370cda39bcf5afef5af08e">show</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1ad27ce773405ea973dc7522fb4ed77220">render</link> (float delta)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1a029f3936fdade6a14c7ceb18ce0f020a">resize</link> (int width, int height)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1a7a8a02719031fa6af5e314cf05b9f089">pause</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1aa7e38ce8b00cf90b28dab16848ec92f1">resume</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1a7b1ce267b752774184b94be5cc83a109">hide</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1ae98fb4de66695e28c46377c32a45068c">dispose</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="__main_menu_screen_8java_source_1l00016">16</link> of file <link linkend="__main_menu_screen_8java_source">MainMenuScreen.java</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1a6b110e23f3602805fde7a75356cf89ef"/><section>
+    <title>MainMenuScreen()</title>
+<indexterm><primary>MainMenuScreen</primary><secondary>com.lobsterchops.accorncollector.screens.MainMenuScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.MainMenuScreen</primary><secondary>MainMenuScreen</secondary></indexterm>
+<para><computeroutput>com.lobsterchops.accorncollector.screens.MainMenuScreen.MainMenuScreen (<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager">ScreenManager</link> screenManager)</computeroutput></para><para>
+Definition at line <link linkend="__main_menu_screen_8java_source_1l00031">31</link> of file <link linkend="__main_menu_screen_8java_source">MainMenuScreen.java</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1ae98fb4de66695e28c46377c32a45068c"/><section>
+    <title>dispose()</title>
+<indexterm><primary>dispose</primary><secondary>com.lobsterchops.accorncollector.screens.MainMenuScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.MainMenuScreen</primary><secondary>dispose</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.MainMenuScreen.dispose ( )</computeroutput></para><para>
+Definition at line <link linkend="__main_menu_screen_8java_source_1l00167">167</link> of file <link linkend="__main_menu_screen_8java_source">MainMenuScreen.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1a7b1ce267b752774184b94be5cc83a109"/><section>
+    <title>hide()</title>
+<indexterm><primary>hide</primary><secondary>com.lobsterchops.accorncollector.screens.MainMenuScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.MainMenuScreen</primary><secondary>hide</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.MainMenuScreen.hide ( )</computeroutput></para><para>
+Definition at line <link linkend="__main_menu_screen_8java_source_1l00162">162</link> of file <link linkend="__main_menu_screen_8java_source">MainMenuScreen.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1a7a8a02719031fa6af5e314cf05b9f089"/><section>
+    <title>pause()</title>
+<indexterm><primary>pause</primary><secondary>com.lobsterchops.accorncollector.screens.MainMenuScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.MainMenuScreen</primary><secondary>pause</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.MainMenuScreen.pause ( )</computeroutput></para><para>
+Definition at line <link linkend="__main_menu_screen_8java_source_1l00152">152</link> of file <link linkend="__main_menu_screen_8java_source">MainMenuScreen.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1ad27ce773405ea973dc7522fb4ed77220"/><section>
+    <title>render()</title>
+<indexterm><primary>render</primary><secondary>com.lobsterchops.accorncollector.screens.MainMenuScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.MainMenuScreen</primary><secondary>render</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.MainMenuScreen.render (float delta)</computeroutput></para><para>
+Definition at line <link linkend="__main_menu_screen_8java_source_1l00053">53</link> of file <link linkend="__main_menu_screen_8java_source">MainMenuScreen.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1a029f3936fdade6a14c7ceb18ce0f020a"/><section>
+    <title>resize()</title>
+<indexterm><primary>resize</primary><secondary>com.lobsterchops.accorncollector.screens.MainMenuScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.MainMenuScreen</primary><secondary>resize</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.MainMenuScreen.resize (int width, int height)</computeroutput></para><para>
+Definition at line <link linkend="__main_menu_screen_8java_source_1l00118">118</link> of file <link linkend="__main_menu_screen_8java_source">MainMenuScreen.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1aa7e38ce8b00cf90b28dab16848ec92f1"/><section>
+    <title>resume()</title>
+<indexterm><primary>resume</primary><secondary>com.lobsterchops.accorncollector.screens.MainMenuScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.MainMenuScreen</primary><secondary>resume</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.MainMenuScreen.resume ( )</computeroutput></para><para>
+Definition at line <link linkend="__main_menu_screen_8java_source_1l00157">157</link> of file <link linkend="__main_menu_screen_8java_source">MainMenuScreen.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen_1ac595a7a886370cda39bcf5afef5af08e"/><section>
+    <title>show()</title>
+<indexterm><primary>show</primary><secondary>com.lobsterchops.accorncollector.screens.MainMenuScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.MainMenuScreen</primary><secondary>show</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.MainMenuScreen.show ( )</computeroutput></para><para>
+Definition at line <link linkend="__main_menu_screen_8java_source_1l00045">45</link> of file <link linkend="__main_menu_screen_8java_source">MainMenuScreen.java</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+core/src/main/java/com/lobsterchops/accorncollector/screens/MainMenuScreen.java</section>
+</section>

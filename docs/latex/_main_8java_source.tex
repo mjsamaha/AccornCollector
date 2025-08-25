@@ -1,0 +1,33 @@
+\doxysection{Main.\+java}
+\hypertarget{_main_8java_source}{}\label{_main_8java_source}\index{core/src/main/java/com/lobsterchops/accorncollector/Main.java@{core/src/main/java/com/lobsterchops/accorncollector/Main.java}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.lobsterchops.accorncollector;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00003}00003\ \textcolor{keyword}{import}\ com.badlogic.gdx.Game;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00004}00004\ \textcolor{keyword}{import}\ com.lobsterchops.accorncollector.screens.MainMenuScreen;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00005}00005\ \textcolor{keyword}{import}\ com.lobsterchops.accorncollector.screens.ScreenManager;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00008}\mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1_main}{00008}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1_main}{Main}}\ \textcolor{keyword}{extends}\ Game\ \{}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager}{ScreenManager}}\ screenManager;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00010}00010\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00011}00011\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ create()\ \{}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00013}00013\ \ \ \ \ \ \ \ \ screenManager\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager}{ScreenManager}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00014}00014\ \ \ \ \ \ \ \ \ screenManager.setScreen(\textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen}{MainMenuScreen}}(screenManager));}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00016}00016\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager}{ScreenManager}}\ getScreenManager()\ \{}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ screenManager;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00020}00020\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00021}00021\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ dispose()\ \{}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ super.dispose();}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (screenManager\ !=\ \textcolor{keyword}{null}\ \&\&\ screenManager.getCurrentScreen()\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ screenManager.getCurrentScreen().dispose();}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00028}00028\ \}}
+
+\end{DoxyCode}

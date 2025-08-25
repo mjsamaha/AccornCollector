@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__main_8java_source" xml:lang="en-US">
+<title>Main.java</title>
+<indexterm><primary>core/src/main/java/com/lobsterchops/accorncollector/Main.java</primary></indexterm>
+<programlisting linenumbering="unnumbered"><anchor xml:id="__main_8java_source_1l00001"/>00001 <emphasis role="keyword">package&#32;</emphasis>com.lobsterchops.accorncollector;
+<anchor xml:id="__main_8java_source_1l00002"/>00002 
+<anchor xml:id="__main_8java_source_1l00003"/>00003 <emphasis role="keyword">import</emphasis>&#32;com.badlogic.gdx.Game;
+<anchor xml:id="__main_8java_source_1l00004"/>00004 <emphasis role="keyword">import</emphasis>&#32;com.lobsterchops.accorncollector.screens.MainMenuScreen;
+<anchor xml:id="__main_8java_source_1l00005"/>00005 <emphasis role="keyword">import</emphasis>&#32;com.lobsterchops.accorncollector.screens.ScreenManager;
+<anchor xml:id="__main_8java_source_1l00006"/>00006 
+<anchor xml:id="__main_8java_source_1l00008"/><link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_main">00008</link> <emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_main">Main</link>&#32;<emphasis role="keyword">extends</emphasis>&#32;Game&#32;{
+<anchor xml:id="__main_8java_source_1l00009"/>00009 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager">ScreenManager</link>&#32;screenManager;
+<anchor xml:id="__main_8java_source_1l00010"/>00010 &#32;&#32;&#32;&#32;
+<anchor xml:id="__main_8java_source_1l00011"/>00011 &#32;&#32;&#32;&#32;@Override
+<anchor xml:id="__main_8java_source_1l00012"/>00012 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;create()&#32;{
+<anchor xml:id="__main_8java_source_1l00013"/>00013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;screenManager&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager">ScreenManager</link>(<emphasis role="keyword">this</emphasis>);
+<anchor xml:id="__main_8java_source_1l00014"/>00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;screenManager.setScreen(<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen">MainMenuScreen</link>(screenManager));
+<anchor xml:id="__main_8java_source_1l00015"/>00015 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__main_8java_source_1l00016"/>00016 &#32;&#32;&#32;&#32;
+<anchor xml:id="__main_8java_source_1l00017"/>00017 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager">ScreenManager</link>&#32;getScreenManager()&#32;{
+<anchor xml:id="__main_8java_source_1l00018"/>00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;screenManager;
+<anchor xml:id="__main_8java_source_1l00019"/>00019 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__main_8java_source_1l00020"/>00020 &#32;&#32;&#32;&#32;
+<anchor xml:id="__main_8java_source_1l00021"/>00021 &#32;&#32;&#32;&#32;@Override
+<anchor xml:id="__main_8java_source_1l00022"/>00022 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;dispose()&#32;{
+<anchor xml:id="__main_8java_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;super.dispose();
+<anchor xml:id="__main_8java_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(screenManager&#32;!=&#32;<emphasis role="keyword">null</emphasis>&#32;&amp;&amp;&#32;screenManager.getCurrentScreen()&#32;!=&#32;<emphasis role="keyword">null</emphasis>)&#32;{
+<anchor xml:id="__main_8java_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;screenManager.getCurrentScreen().dispose();
+<anchor xml:id="__main_8java_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__main_8java_source_1l00027"/>00027 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__main_8java_source_1l00028"/>00028 }
+</programlisting></section>

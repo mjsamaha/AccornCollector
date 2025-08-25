@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager" xml:lang="en-US">
+<title>com.lobsterchops.accorncollector.screens.ScreenManager Class Reference</title>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.ScreenManager</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type">TransitionType</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1a1e33d1413daaef790e058d4aef4d8612">ScreenManager</link> (Game game)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1a2ff11718299feaecace11d31d9b71d3b">setScreen</link> (Screen screen)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1a496f2f2c6814444731d8ce0b9cb28dd3">setScreen</link> (Screen screen, <link linkend="_enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type">TransitionType</link> transitionType, float duration)</para>
+</listitem>
+            <listitem><para>Screen <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1a77f768e21c27f8e3e1d3797c30f10301">getCurrentScreen</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="__screen_manager_8java_source_1l00012">12</link> of file <link linkend="__screen_manager_8java_source">ScreenManager.java</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1a1e33d1413daaef790e058d4aef4d8612"/><section>
+    <title>ScreenManager()</title>
+<indexterm><primary>ScreenManager</primary><secondary>com.lobsterchops.accorncollector.screens.ScreenManager</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.ScreenManager</primary><secondary>ScreenManager</secondary></indexterm>
+<para><computeroutput>com.lobsterchops.accorncollector.screens.ScreenManager.ScreenManager (Game game)</computeroutput></para><para>
+Definition at line <link linkend="__screen_manager_8java_source_1l00027">27</link> of file <link linkend="__screen_manager_8java_source">ScreenManager.java</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1a77f768e21c27f8e3e1d3797c30f10301"/><section>
+    <title>getCurrentScreen()</title>
+<indexterm><primary>getCurrentScreen</primary><secondary>com.lobsterchops.accorncollector.screens.ScreenManager</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.ScreenManager</primary><secondary>getCurrentScreen</secondary></indexterm>
+<para><computeroutput>Screen com.lobsterchops.accorncollector.screens.ScreenManager.getCurrentScreen ( )</computeroutput></para><para>
+Definition at line <link linkend="__screen_manager_8java_source_1l00048">48</link> of file <link linkend="__screen_manager_8java_source">ScreenManager.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1a2ff11718299feaecace11d31d9b71d3b"/><section>
+    <title>setScreen()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>setScreen</primary><secondary>com.lobsterchops.accorncollector.screens.ScreenManager</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.ScreenManager</primary><secondary>setScreen</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.ScreenManager.setScreen (Screen screen)</computeroutput></para><para>
+Definition at line <link linkend="__screen_manager_8java_source_1l00031">31</link> of file <link linkend="__screen_manager_8java_source">ScreenManager.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1a496f2f2c6814444731d8ce0b9cb28dd3"/><section>
+    <title>setScreen()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>setScreen</primary><secondary>com.lobsterchops.accorncollector.screens.ScreenManager</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.ScreenManager</primary><secondary>setScreen</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.ScreenManager.setScreen (Screen screen, <link linkend="_enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type">TransitionType</link> transitionType, float duration)</computeroutput></para><para>
+Definition at line <link linkend="__screen_manager_8java_source_1l00035">35</link> of file <link linkend="__screen_manager_8java_source">ScreenManager.java</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+core/src/main/java/com/lobsterchops/accorncollector/screens/ScreenManager.java</section>
+</section>

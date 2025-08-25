@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1_accorn_manager" xml:lang="en-US">
+<title>com.lobsterchops.accorncollector.AccornManager Class Reference</title>
+<indexterm><primary>com.lobsterchops.accorncollector.AccornManager</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_accorn_manager_1a5774db53ed540566de71c28a599a88e0">AccornManager</link> (Texture texture, Sound collectSound)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_accorn_manager_1abac83231f4c920a6cc15d2020f9cf4b3">createAccorn</link> (FitViewport viewport)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_accorn_manager_1ab2313876ab11bc973f021b575e61d693">update</link> (float delta, FitViewport viewport, Rectangle playerBounds)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_accorn_manager_1ab0eb4e5a0bae2abbeb01148ac7babb0c">draw</link> (SpriteBatch batch)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Manages spawning, moving and collisions for acorns. </para>
+<para>
+Definition at line <link linkend="__accorn_manager_8java_source_1l00016">16</link> of file <link linkend="__accorn_manager_8java_source">AccornManager.java</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1_accorn_manager_1a5774db53ed540566de71c28a599a88e0"/><section>
+    <title>AccornManager()</title>
+<indexterm><primary>AccornManager</primary><secondary>com.lobsterchops.accorncollector.AccornManager</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.AccornManager</primary><secondary>AccornManager</secondary></indexterm>
+<para><computeroutput>com.lobsterchops.accorncollector.AccornManager.AccornManager (Texture texture, Sound collectSound)</computeroutput></para><para>
+Definition at line <link linkend="__accorn_manager_8java_source_1l00023">23</link> of file <link linkend="__accorn_manager_8java_source">AccornManager.java</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1_accorn_manager_1abac83231f4c920a6cc15d2020f9cf4b3"/><section>
+    <title>createAccorn()</title>
+<indexterm><primary>createAccorn</primary><secondary>com.lobsterchops.accorncollector.AccornManager</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.AccornManager</primary><secondary>createAccorn</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.AccornManager.createAccorn (FitViewport viewport)</computeroutput></para><para>
+Definition at line <link linkend="__accorn_manager_8java_source_1l00029">29</link> of file <link linkend="__accorn_manager_8java_source">AccornManager.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1_accorn_manager_1ab0eb4e5a0bae2abbeb01148ac7babb0c"/><section>
+    <title>draw()</title>
+<indexterm><primary>draw</primary><secondary>com.lobsterchops.accorncollector.AccornManager</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.AccornManager</primary><secondary>draw</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.AccornManager.draw (SpriteBatch batch)</computeroutput></para><para>
+Definition at line <link linkend="__accorn_manager_8java_source_1l00072">72</link> of file <link linkend="__accorn_manager_8java_source">AccornManager.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1_accorn_manager_1ab2313876ab11bc973f021b575e61d693"/><section>
+    <title>update()</title>
+<indexterm><primary>update</primary><secondary>com.lobsterchops.accorncollector.AccornManager</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.AccornManager</primary><secondary>update</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.AccornManager.update (float delta, FitViewport viewport, Rectangle playerBounds)</computeroutput></para><para>
+Definition at line <link linkend="__accorn_manager_8java_source_1l00044">44</link> of file <link linkend="__accorn_manager_8java_source">AccornManager.java</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+core/src/main/java/com/lobsterchops/accorncollector/AccornManager.java</section>
+</section>

@@ -1,0 +1,189 @@
+\doxysection{Game\+Screen.\+java}
+\hypertarget{_game_screen_8java_source}{}\label{_game_screen_8java_source}\index{core/src/main/java/com/lobsterchops/accorncollector/screens/GameScreen.java@{core/src/main/java/com/lobsterchops/accorncollector/screens/GameScreen.java}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.lobsterchops.accorncollector.screens;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00003}00003\ \textcolor{keyword}{import}\ com.badlogic.gdx.Gdx;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00004}00004\ \textcolor{keyword}{import}\ com.badlogic.gdx.Input;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00005}00005\ \textcolor{keyword}{import}\ com.badlogic.gdx.Screen;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00006}00006\ \textcolor{keyword}{import}\ com.badlogic.gdx.audio.Music;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00007}00007\ \textcolor{keyword}{import}\ com.badlogic.gdx.audio.Sound;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00008}00008\ \textcolor{keyword}{import}\ com.badlogic.gdx.graphics.Color;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00009}00009\ \textcolor{keyword}{import}\ com.badlogic.gdx.graphics.GL20;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00010}00010\ \textcolor{keyword}{import}\ com.badlogic.gdx.graphics.Texture;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00011}00011\ \textcolor{keyword}{import}\ com.badlogic.gdx.graphics.g2d.BitmapFont;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00012}00012\ \textcolor{keyword}{import}\ com.badlogic.gdx.graphics.g2d.GlyphLayout;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00013}00013\ \textcolor{keyword}{import}\ com.badlogic.gdx.graphics.g2d.SpriteBatch;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00014}00014\ \textcolor{keyword}{import}\ com.badlogic.gdx.utils.ScreenUtils;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00015}00015\ \textcolor{keyword}{import}\ com.badlogic.gdx.utils.viewport.FitViewport;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00016}00016\ \textcolor{keyword}{import}\ com.lobsterchops.accorncollector.AccornManager;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00017}00017\ \textcolor{keyword}{import}\ com.lobsterchops.accorncollector.Player;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00019}\mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen}{00019}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }GameScreen\ \textcolor{keyword}{implements}\ Screen\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager}{ScreenManager}}\ screenManager;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00021}00021\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00022}00022\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ FitViewport\ viewport;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00024}00024\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00025}00025\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00026}00026\ \ \ \ \ \textcolor{comment}{/*\ rendering\ */}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{private}\ SpriteBatch\ batch;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{private}\ BitmapFont\ font;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{private}\ GlyphLayout\ layout;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00030}00030\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00031}00031\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00032}00032\ \ \ \ \ \textcolor{comment}{/*\ assets\ */}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{private}\ Texture\ backgroundTexture;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{private}\ Texture\ playerTexture;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{private}\ Texture\ acornTexture;\ \textcolor{comment}{//\ note:\ original\ file\ name\ can\ remain\ "{}accorn.png"{}}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{private}\ Sound\ collectSound;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{private}\ Music\ gameplayMusic;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00038}00038\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00039}00039\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00040}00040\ \ \ \ \ \textcolor{comment}{/*\ game\ objects\ */}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1_player}{Player}}\ player;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1_accorn_manager}{AccornManager}}\ accornManager;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00043}00043\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00044}00044\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{public}\ GameScreen(\mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager}{ScreenManager}}\ screenManager)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ this.screenManager\ =\ screenManager;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00048}00048\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00049}00049\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ show()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ setupRendering();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ setupViewport();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ loadAssets();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ createGameObjects();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ setupAudio();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00057}00057\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ setupRendering()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ batch\ =\ \textcolor{keyword}{new}\ SpriteBatch();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ font\ =\ \textcolor{keyword}{new}\ BitmapFont();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ layout\ =\ \textcolor{keyword}{new}\ GlyphLayout();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ font.getData().setScale(1.5f);}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ font.setColor(Color.WHITE);}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00065}00065\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ setupViewport()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ viewport\ =\ \textcolor{keyword}{new}\ FitViewport(8,\ 6);}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00069}00069\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ loadAssets()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ backgroundTexture\ =\ \textcolor{keyword}{new}\ Texture(\textcolor{stringliteral}{"{}background.png"{}});}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ playerTexture\ =\ \textcolor{keyword}{new}\ Texture(\textcolor{stringliteral}{"{}player.png"{}});}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ acornTexture\ =\ \textcolor{keyword}{new}\ Texture(\textcolor{stringliteral}{"{}accorn.png"{}});}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ collectSound\ =\ Gdx.audio.newSound(Gdx.files.internal(\textcolor{stringliteral}{"{}collect.wav"{}}));}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ gameplayMusic\ =\ Gdx.audio.newMusic(Gdx.files.internal(\textcolor{stringliteral}{"{}Amber\ Forest.mp3"{}}));}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00079}00079\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ createGameObjects()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ place\ player\ at\ bottom\ center}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ startX\ =\ viewport.getWorldWidth()\ /\ 2f\ -\/\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ startY\ =\ 0f;}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ player\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1_player}{Player}}(playerTexture,\ startX,\ startY);}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ accornManager\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1_accorn_manager}{AccornManager}}(acornTexture,\ collectSound);}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ create\ the\ first\ acorn\ using\ the\ viewport\ so\ it\ can\ spawn\ at\ the\ top\ of\ the\ world}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ accornManager.createAccorn(viewport);}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00091}00091\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00092}00092\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ setupAudio()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ gameplayMusic.setLooping(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ gameplayMusic.setVolume(.5f);}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ gameplayMusic.play();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00096}00096\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00097}00097\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00098}00098\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00099}00099\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ render(\textcolor{keywordtype}{float}\ delta)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ handleInput();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ update(delta);}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ draw();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00104}00104\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00105}00105\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ handleInput()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE))\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ screenManager.setScreen(\textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen}{MainMenuScreen}}(screenManager),\ \mbox{\hyperlink{classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager}{ScreenManager}}.\mbox{\hyperlink{enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type}{TransitionType}}.FADE,\ 0.5f);}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00110}00110\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00111}00111\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ update(\textcolor{keywordtype}{float}\ delta)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ update\ player\ (handles\ its\ own\ input\ +\ bounds)}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ player.update(delta,\ viewport);}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ update\ acorns\ and\ check\ collisions}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ accornManager.update(delta,\ viewport,\ player.getBounds());}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00119}00119\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00120}00120\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ draw()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ ScreenUtils.clear(Color.BLACK);}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ viewport.apply();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ batch.setProjectionMatrix(viewport.getCamera().combined);}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00126}00126\ \ \ \ \ \ \ \ \ batch.begin();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ worldWidth\ =\ viewport.getWorldWidth();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ worldHeight\ =\ viewport.getWorldHeight();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ batch.draw(backgroundTexture,\ 0,\ 0,\ worldWidth,\ worldHeight);}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00136}00136\ \ \ \ \ \ \ \ \ player.draw(batch);}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00137}00137\ \ \ \ \ \ \ \ \ accornManager.draw(batch);}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ batch.end();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00143}00143\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00144}00144\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ resize(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00145}00145\ \ \ \ \ \ \ \ \ viewport.update(width,\ height,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00146}00146\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00147}00147\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00148}00148\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00149}00149\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ pause()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00150}00150\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00151}00151\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00154}00154\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00155}00155\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ resume()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00156}00156\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00157}00157\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00160}00160\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00161}00161\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ hide()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00162}00162\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00163}00163\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00164}00164\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00165}00165\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00166}00166\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ dispose()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ dispose\ everything\ this\ screen\ created}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00168}00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (batch\ !=\ \textcolor{keyword}{null})\ batch.dispose();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00169}00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (font\ !=\ \textcolor{keyword}{null})\ font.dispose();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00170}00170\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00171}00171\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (backgroundTexture\ !=\ \textcolor{keyword}{null})\ backgroundTexture.dispose();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00173}00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playerTexture\ !=\ \textcolor{keyword}{null})\ playerTexture.dispose();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (acornTexture\ !=\ \textcolor{keyword}{null})\ acornTexture.dispose();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00175}00175\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00176}00176\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collectSound\ !=\ \textcolor{keyword}{null})\ collectSound.dispose();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (gameplayMusic\ !=\ \textcolor{keyword}{null})\ gameplayMusic.dispose();}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00180}00180\ \ \ \ \ \textcolor{comment}{//\ player\ and\ acornManager\ do\ not\ own\ textures/sounds\ so\ no\ double-\/dispose}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00181}00181\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00182}00182\ \}}
+\DoxyCodeLine{\Hypertarget{_game_screen_8java_source_l00183}00183\ \ \ \ \ }
+
+\end{DoxyCode}

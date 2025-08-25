@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen" xml:lang="en-US">
+<title>com.lobsterchops.accorncollector.screens.GameScreen Class Reference</title>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.GameScreen</primary></indexterm>
+<para>Inheritance diagram for com.lobsterchops.accorncollector.screens.GameScreen:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1aef98d0b24f8291d0148692f4b51e1208">GameScreen</link> (<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager">ScreenManager</link> screenManager)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1a6f2f87f084ed8288948db8c675572aa7">show</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1a2a69aeee2cd00966c4ce4cca92331afe">render</link> (float delta)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1a62b107d68cdb90c0c4e5aaf6528a45b7">resize</link> (int width, int height)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1a5abcce75769a8a36348192c81d96463f">pause</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1ad91cc933fc6696f8bead4f2a6e77c708">resume</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1ac468bb0001793c89c4a3ee6d6517ecaf">hide</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1aeefa39363e5753260815693f7c6a7918">dispose</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="__game_screen_8java_source_1l00019">19</link> of file <link linkend="__game_screen_8java_source">GameScreen.java</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1aef98d0b24f8291d0148692f4b51e1208"/><section>
+    <title>GameScreen()</title>
+<indexterm><primary>GameScreen</primary><secondary>com.lobsterchops.accorncollector.screens.GameScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.GameScreen</primary><secondary>GameScreen</secondary></indexterm>
+<para><computeroutput>com.lobsterchops.accorncollector.screens.GameScreen.GameScreen (<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager">ScreenManager</link> screenManager)</computeroutput></para><para>
+Definition at line <link linkend="__game_screen_8java_source_1l00045">45</link> of file <link linkend="__game_screen_8java_source">GameScreen.java</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1aeefa39363e5753260815693f7c6a7918"/><section>
+    <title>dispose()</title>
+<indexterm><primary>dispose</primary><secondary>com.lobsterchops.accorncollector.screens.GameScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.GameScreen</primary><secondary>dispose</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.GameScreen.dispose ( )</computeroutput></para><para>
+Definition at line <link linkend="__game_screen_8java_source_1l00166">166</link> of file <link linkend="__game_screen_8java_source">GameScreen.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1ac468bb0001793c89c4a3ee6d6517ecaf"/><section>
+    <title>hide()</title>
+<indexterm><primary>hide</primary><secondary>com.lobsterchops.accorncollector.screens.GameScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.GameScreen</primary><secondary>hide</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.GameScreen.hide ( )</computeroutput></para><para>
+Definition at line <link linkend="__game_screen_8java_source_1l00161">161</link> of file <link linkend="__game_screen_8java_source">GameScreen.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1a5abcce75769a8a36348192c81d96463f"/><section>
+    <title>pause()</title>
+<indexterm><primary>pause</primary><secondary>com.lobsterchops.accorncollector.screens.GameScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.GameScreen</primary><secondary>pause</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.GameScreen.pause ( )</computeroutput></para><para>
+Definition at line <link linkend="__game_screen_8java_source_1l00149">149</link> of file <link linkend="__game_screen_8java_source">GameScreen.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1a2a69aeee2cd00966c4ce4cca92331afe"/><section>
+    <title>render()</title>
+<indexterm><primary>render</primary><secondary>com.lobsterchops.accorncollector.screens.GameScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.GameScreen</primary><secondary>render</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.GameScreen.render (float delta)</computeroutput></para><para>
+Definition at line <link linkend="__game_screen_8java_source_1l00099">99</link> of file <link linkend="__game_screen_8java_source">GameScreen.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1a62b107d68cdb90c0c4e5aaf6528a45b7"/><section>
+    <title>resize()</title>
+<indexterm><primary>resize</primary><secondary>com.lobsterchops.accorncollector.screens.GameScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.GameScreen</primary><secondary>resize</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.GameScreen.resize (int width, int height)</computeroutput></para><para>
+Definition at line <link linkend="__game_screen_8java_source_1l00144">144</link> of file <link linkend="__game_screen_8java_source">GameScreen.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1ad91cc933fc6696f8bead4f2a6e77c708"/><section>
+    <title>resume()</title>
+<indexterm><primary>resume</primary><secondary>com.lobsterchops.accorncollector.screens.GameScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.GameScreen</primary><secondary>resume</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.GameScreen.resume ( )</computeroutput></para><para>
+Definition at line <link linkend="__game_screen_8java_source_1l00155">155</link> of file <link linkend="__game_screen_8java_source">GameScreen.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen_1a6f2f87f084ed8288948db8c675572aa7"/><section>
+    <title>show()</title>
+<indexterm><primary>show</primary><secondary>com.lobsterchops.accorncollector.screens.GameScreen</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.screens.GameScreen</primary><secondary>show</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.screens.GameScreen.show ( )</computeroutput></para><para>
+Definition at line <link linkend="__game_screen_8java_source_1l00050">50</link> of file <link linkend="__game_screen_8java_source">GameScreen.java</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+core/src/main/java/com/lobsterchops/accorncollector/screens/GameScreen.java</section>
+</section>

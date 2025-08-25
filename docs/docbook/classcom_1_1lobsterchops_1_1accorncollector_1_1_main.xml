@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1_main" xml:lang="en-US">
+<title>com.lobsterchops.accorncollector.Main Class Reference</title>
+<indexterm><primary>com.lobsterchops.accorncollector.Main</primary></indexterm>
+<para>Inheritance diagram for com.lobsterchops.accorncollector.Main:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classcom_1_1lobsterchops_1_1accorncollector_1_1_main.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_main_1ab82ee6f44b40eabb68f168dac3eeaba5">create</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager">ScreenManager</link> <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_main_1a43b181230286888ed1b92bae8a303d98">getScreenManager</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_main_1a3f743ecac1c5143b8ba631f1b8dcb1ca">dispose</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><computeroutput><link linkend="_">com.badlogic.gdx.ApplicationListener</link></computeroutput> implementation shared by all platforms. </para>
+<para>
+Definition at line <link linkend="__main_8java_source_1l00008">8</link> of file <link linkend="__main_8java_source">Main.java</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1_main_1ab82ee6f44b40eabb68f168dac3eeaba5"/><section>
+    <title>create()</title>
+<indexterm><primary>create</primary><secondary>com.lobsterchops.accorncollector.Main</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.Main</primary><secondary>create</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.Main.create ( )</computeroutput></para><para>
+Definition at line <link linkend="__main_8java_source_1l00012">12</link> of file <link linkend="__main_8java_source">Main.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1_main_1a3f743ecac1c5143b8ba631f1b8dcb1ca"/><section>
+    <title>dispose()</title>
+<indexterm><primary>dispose</primary><secondary>com.lobsterchops.accorncollector.Main</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.Main</primary><secondary>dispose</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.Main.dispose ( )</computeroutput></para><para>
+Definition at line <link linkend="__main_8java_source_1l00022">22</link> of file <link linkend="__main_8java_source">Main.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1_main_1a43b181230286888ed1b92bae8a303d98"/><section>
+    <title>getScreenManager()</title>
+<indexterm><primary>getScreenManager</primary><secondary>com.lobsterchops.accorncollector.Main</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.Main</primary><secondary>getScreenManager</secondary></indexterm>
+<para><computeroutput><link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager">ScreenManager</link> com.lobsterchops.accorncollector.Main.getScreenManager ( )</computeroutput></para><para>
+Definition at line <link linkend="__main_8java_source_1l00017">17</link> of file <link linkend="__main_8java_source">Main.java</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+core/src/main/java/com/lobsterchops/accorncollector/Main.java</section>
+</section>

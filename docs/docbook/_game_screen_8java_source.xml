@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__game_screen_8java_source" xml:lang="en-US">
+<title>GameScreen.java</title>
+<indexterm><primary>core/src/main/java/com/lobsterchops/accorncollector/screens/GameScreen.java</primary></indexterm>
+<programlisting linenumbering="unnumbered"><anchor xml:id="__game_screen_8java_source_1l00001"/>00001 <emphasis role="keyword">package&#32;</emphasis>com.lobsterchops.accorncollector.screens;
+<anchor xml:id="__game_screen_8java_source_1l00002"/>00002 
+<anchor xml:id="__game_screen_8java_source_1l00003"/>00003 <emphasis role="keyword">import</emphasis>&#32;com.badlogic.gdx.Gdx;
+<anchor xml:id="__game_screen_8java_source_1l00004"/>00004 <emphasis role="keyword">import</emphasis>&#32;com.badlogic.gdx.Input;
+<anchor xml:id="__game_screen_8java_source_1l00005"/>00005 <emphasis role="keyword">import</emphasis>&#32;com.badlogic.gdx.Screen;
+<anchor xml:id="__game_screen_8java_source_1l00006"/>00006 <emphasis role="keyword">import</emphasis>&#32;com.badlogic.gdx.audio.Music;
+<anchor xml:id="__game_screen_8java_source_1l00007"/>00007 <emphasis role="keyword">import</emphasis>&#32;com.badlogic.gdx.audio.Sound;
+<anchor xml:id="__game_screen_8java_source_1l00008"/>00008 <emphasis role="keyword">import</emphasis>&#32;com.badlogic.gdx.graphics.Color;
+<anchor xml:id="__game_screen_8java_source_1l00009"/>00009 <emphasis role="keyword">import</emphasis>&#32;com.badlogic.gdx.graphics.GL20;
+<anchor xml:id="__game_screen_8java_source_1l00010"/>00010 <emphasis role="keyword">import</emphasis>&#32;com.badlogic.gdx.graphics.Texture;
+<anchor xml:id="__game_screen_8java_source_1l00011"/>00011 <emphasis role="keyword">import</emphasis>&#32;com.badlogic.gdx.graphics.g2d.BitmapFont;
+<anchor xml:id="__game_screen_8java_source_1l00012"/>00012 <emphasis role="keyword">import</emphasis>&#32;com.badlogic.gdx.graphics.g2d.GlyphLayout;
+<anchor xml:id="__game_screen_8java_source_1l00013"/>00013 <emphasis role="keyword">import</emphasis>&#32;com.badlogic.gdx.graphics.g2d.SpriteBatch;
+<anchor xml:id="__game_screen_8java_source_1l00014"/>00014 <emphasis role="keyword">import</emphasis>&#32;com.badlogic.gdx.utils.ScreenUtils;
+<anchor xml:id="__game_screen_8java_source_1l00015"/>00015 <emphasis role="keyword">import</emphasis>&#32;com.badlogic.gdx.utils.viewport.FitViewport;
+<anchor xml:id="__game_screen_8java_source_1l00016"/>00016 <emphasis role="keyword">import</emphasis>&#32;com.lobsterchops.accorncollector.AccornManager;
+<anchor xml:id="__game_screen_8java_source_1l00017"/>00017 <emphasis role="keyword">import</emphasis>&#32;com.lobsterchops.accorncollector.Player;
+<anchor xml:id="__game_screen_8java_source_1l00018"/>00018 
+<anchor xml:id="__game_screen_8java_source_1l00019"/><link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_game_screen">00019</link> <emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">class&#32;</emphasis>GameScreen&#32;<emphasis role="keyword">implements</emphasis>&#32;Screen&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager">ScreenManager</link>&#32;screenManager;
+<anchor xml:id="__game_screen_8java_source_1l00021"/>00021 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00022"/>00022 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00023"/>00023 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;FitViewport&#32;viewport;
+<anchor xml:id="__game_screen_8java_source_1l00024"/>00024 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00025"/>00025 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00026"/>00026 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;rendering&#32;*/</emphasis>
+<anchor xml:id="__game_screen_8java_source_1l00027"/>00027 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;SpriteBatch&#32;batch;
+<anchor xml:id="__game_screen_8java_source_1l00028"/>00028 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;BitmapFont&#32;font;
+<anchor xml:id="__game_screen_8java_source_1l00029"/>00029 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;GlyphLayout&#32;layout;
+<anchor xml:id="__game_screen_8java_source_1l00030"/>00030 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00031"/>00031 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00032"/>00032 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;assets&#32;*/</emphasis>
+<anchor xml:id="__game_screen_8java_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;Texture&#32;backgroundTexture;
+<anchor xml:id="__game_screen_8java_source_1l00034"/>00034 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;Texture&#32;playerTexture;
+<anchor xml:id="__game_screen_8java_source_1l00035"/>00035 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;Texture&#32;acornTexture;&#32;<emphasis role="comment">//&#32;note:&#32;original&#32;file&#32;name&#32;can&#32;remain&#32;&quot;accorn.png&quot;</emphasis>
+<anchor xml:id="__game_screen_8java_source_1l00036"/>00036 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;Sound&#32;collectSound;
+<anchor xml:id="__game_screen_8java_source_1l00037"/>00037 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;Music&#32;gameplayMusic;
+<anchor xml:id="__game_screen_8java_source_1l00038"/>00038 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00039"/>00039 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00040"/>00040 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;game&#32;objects&#32;*/</emphasis>
+<anchor xml:id="__game_screen_8java_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_player">Player</link>&#32;player;
+<anchor xml:id="__game_screen_8java_source_1l00042"/>00042 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_accorn_manager">AccornManager</link>&#32;accornManager;
+<anchor xml:id="__game_screen_8java_source_1l00043"/>00043 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00044"/>00044 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00045"/>00045 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;GameScreen(<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager">ScreenManager</link>&#32;screenManager)&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.screenManager&#32;=&#32;screenManager;
+<anchor xml:id="__game_screen_8java_source_1l00047"/>00047 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00048"/>00048 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00049"/>00049 &#32;&#32;&#32;&#32;@Override
+<anchor xml:id="__game_screen_8java_source_1l00050"/>00050 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;show()&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;setupRendering();
+<anchor xml:id="__game_screen_8java_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;setupViewport();
+<anchor xml:id="__game_screen_8java_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;loadAssets();
+<anchor xml:id="__game_screen_8java_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;createGameObjects();
+<anchor xml:id="__game_screen_8java_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;setupAudio();
+<anchor xml:id="__game_screen_8java_source_1l00056"/>00056 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00057"/>00057 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00058"/>00058 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;setupRendering()&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;batch&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;SpriteBatch();
+<anchor xml:id="__game_screen_8java_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;font&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;BitmapFont();
+<anchor xml:id="__game_screen_8java_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;layout&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;GlyphLayout();
+<anchor xml:id="__game_screen_8java_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;font.getData().setScale(1.5f);
+<anchor xml:id="__game_screen_8java_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;font.setColor(Color.WHITE);
+<anchor xml:id="__game_screen_8java_source_1l00064"/>00064 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00065"/>00065 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00066"/>00066 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;setupViewport()&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;viewport&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;FitViewport(8,&#32;6);
+<anchor xml:id="__game_screen_8java_source_1l00068"/>00068 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00069"/>00069 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00070"/>00070 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;loadAssets()&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;backgroundTexture&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Texture(<emphasis role="stringliteral">&quot;background.png&quot;</emphasis>);
+<anchor xml:id="__game_screen_8java_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;playerTexture&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Texture(<emphasis role="stringliteral">&quot;player.png&quot;</emphasis>);
+<anchor xml:id="__game_screen_8java_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;acornTexture&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Texture(<emphasis role="stringliteral">&quot;accorn.png&quot;</emphasis>);
+<anchor xml:id="__game_screen_8java_source_1l00074"/>00074 
+<anchor xml:id="__game_screen_8java_source_1l00075"/>00075 
+<anchor xml:id="__game_screen_8java_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;collectSound&#32;=&#32;Gdx.audio.newSound(Gdx.files.internal(<emphasis role="stringliteral">&quot;collect.wav&quot;</emphasis>));
+<anchor xml:id="__game_screen_8java_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gameplayMusic&#32;=&#32;Gdx.audio.newMusic(Gdx.files.internal(<emphasis role="stringliteral">&quot;Amber&#32;Forest.mp3&quot;</emphasis>));
+<anchor xml:id="__game_screen_8java_source_1l00078"/>00078 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00079"/>00079 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00080"/>00080 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;createGameObjects()&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;place&#32;player&#32;at&#32;bottom&#32;center</emphasis>
+<anchor xml:id="__game_screen_8java_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;startX&#32;=&#32;viewport.getWorldWidth()&#32;/&#32;2f&#32;-&#32;0.5f;
+<anchor xml:id="__game_screen_8java_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;startY&#32;=&#32;0f;
+<anchor xml:id="__game_screen_8java_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;player&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_player">Player</link>(playerTexture,&#32;startX,&#32;startY);
+<anchor xml:id="__game_screen_8java_source_1l00085"/>00085 
+<anchor xml:id="__game_screen_8java_source_1l00086"/>00086 
+<anchor xml:id="__game_screen_8java_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;accornManager&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_accorn_manager">AccornManager</link>(acornTexture,&#32;collectSound);
+<anchor xml:id="__game_screen_8java_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;create&#32;the&#32;first&#32;acorn&#32;using&#32;the&#32;viewport&#32;so&#32;it&#32;can&#32;spawn&#32;at&#32;the&#32;top&#32;of&#32;the&#32;world</emphasis>
+<anchor xml:id="__game_screen_8java_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;accornManager.createAccorn(viewport);
+<anchor xml:id="__game_screen_8java_source_1l00090"/>00090 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00091"/>00091 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00092"/>00092 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;setupAudio()&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00093"/>00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gameplayMusic.setLooping(<emphasis role="keyword">true</emphasis>);
+<anchor xml:id="__game_screen_8java_source_1l00094"/>00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gameplayMusic.setVolume(.5f);
+<anchor xml:id="__game_screen_8java_source_1l00095"/>00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gameplayMusic.play();
+<anchor xml:id="__game_screen_8java_source_1l00096"/>00096 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00097"/>00097 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00098"/>00098 &#32;&#32;&#32;&#32;@Override
+<anchor xml:id="__game_screen_8java_source_1l00099"/>00099 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;render(<emphasis role="keywordtype">float</emphasis>&#32;delta)&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00100"/>00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;handleInput();
+<anchor xml:id="__game_screen_8java_source_1l00101"/>00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;update(delta);
+<anchor xml:id="__game_screen_8java_source_1l00102"/>00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;draw();
+<anchor xml:id="__game_screen_8java_source_1l00103"/>00103 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00104"/>00104 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00105"/>00105 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;handleInput()&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00106"/>00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE))&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00107"/>00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;screenManager.setScreen(<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_main_menu_screen">MainMenuScreen</link>(screenManager),&#32;<link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager">ScreenManager</link>.<link linkend="_enumcom_1_1lobsterchops_1_1accorncollector_1_1screens_1_1_screen_manager_1_1_transition_type">TransitionType</link>.FADE,&#32;0.5f);
+<anchor xml:id="__game_screen_8java_source_1l00108"/>00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00109"/>00109 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00110"/>00110 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00111"/>00111 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;update(<emphasis role="keywordtype">float</emphasis>&#32;delta)&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00112"/>00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;update&#32;player&#32;(handles&#32;its&#32;own&#32;input&#32;+&#32;bounds)</emphasis>
+<anchor xml:id="__game_screen_8java_source_1l00113"/>00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;player.update(delta,&#32;viewport);
+<anchor xml:id="__game_screen_8java_source_1l00114"/>00114 
+<anchor xml:id="__game_screen_8java_source_1l00115"/>00115 
+<anchor xml:id="__game_screen_8java_source_1l00116"/>00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;update&#32;acorns&#32;and&#32;check&#32;collisions</emphasis>
+<anchor xml:id="__game_screen_8java_source_1l00117"/>00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;accornManager.update(delta,&#32;viewport,&#32;player.getBounds());
+<anchor xml:id="__game_screen_8java_source_1l00118"/>00118 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00119"/>00119 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00120"/>00120 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;draw()&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00121"/>00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ScreenUtils.clear(Color.BLACK);
+<anchor xml:id="__game_screen_8java_source_1l00122"/>00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;viewport.apply();
+<anchor xml:id="__game_screen_8java_source_1l00123"/>00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;batch.setProjectionMatrix(viewport.getCamera().combined);
+<anchor xml:id="__game_screen_8java_source_1l00124"/>00124 
+<anchor xml:id="__game_screen_8java_source_1l00125"/>00125 
+<anchor xml:id="__game_screen_8java_source_1l00126"/>00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;batch.begin();
+<anchor xml:id="__game_screen_8java_source_1l00127"/>00127 
+<anchor xml:id="__game_screen_8java_source_1l00128"/>00128 
+<anchor xml:id="__game_screen_8java_source_1l00129"/>00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;worldWidth&#32;=&#32;viewport.getWorldWidth();
+<anchor xml:id="__game_screen_8java_source_1l00130"/>00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;worldHeight&#32;=&#32;viewport.getWorldHeight();
+<anchor xml:id="__game_screen_8java_source_1l00131"/>00131 
+<anchor xml:id="__game_screen_8java_source_1l00132"/>00132 
+<anchor xml:id="__game_screen_8java_source_1l00133"/>00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;batch.draw(backgroundTexture,&#32;0,&#32;0,&#32;worldWidth,&#32;worldHeight);
+<anchor xml:id="__game_screen_8java_source_1l00134"/>00134 
+<anchor xml:id="__game_screen_8java_source_1l00135"/>00135 
+<anchor xml:id="__game_screen_8java_source_1l00136"/>00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;player.draw(batch);
+<anchor xml:id="__game_screen_8java_source_1l00137"/>00137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;accornManager.draw(batch);
+<anchor xml:id="__game_screen_8java_source_1l00138"/>00138 
+<anchor xml:id="__game_screen_8java_source_1l00139"/>00139 
+<anchor xml:id="__game_screen_8java_source_1l00140"/>00140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;batch.end();
+<anchor xml:id="__game_screen_8java_source_1l00141"/>00141 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00142"/>00142 
+<anchor xml:id="__game_screen_8java_source_1l00143"/>00143 &#32;&#32;&#32;&#32;@Override
+<anchor xml:id="__game_screen_8java_source_1l00144"/>00144 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;resize(<emphasis role="keywordtype">int</emphasis>&#32;width,&#32;<emphasis role="keywordtype">int</emphasis>&#32;height)&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00145"/>00145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;viewport.update(width,&#32;height,&#32;<emphasis role="keyword">true</emphasis>);
+<anchor xml:id="__game_screen_8java_source_1l00146"/>00146 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00147"/>00147 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00148"/>00148 &#32;&#32;&#32;&#32;@Override
+<anchor xml:id="__game_screen_8java_source_1l00149"/>00149 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;pause()&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00150"/>00150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00151"/>00151 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00152"/>00152 
+<anchor xml:id="__game_screen_8java_source_1l00153"/>00153 
+<anchor xml:id="__game_screen_8java_source_1l00154"/>00154 &#32;&#32;&#32;&#32;@Override
+<anchor xml:id="__game_screen_8java_source_1l00155"/>00155 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;resume()&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00156"/>00156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00157"/>00157 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00158"/>00158 
+<anchor xml:id="__game_screen_8java_source_1l00159"/>00159 
+<anchor xml:id="__game_screen_8java_source_1l00160"/>00160 &#32;&#32;&#32;&#32;@Override
+<anchor xml:id="__game_screen_8java_source_1l00161"/>00161 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;hide()&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00162"/>00162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00163"/>00163 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00164"/>00164 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00165"/>00165 &#32;&#32;&#32;&#32;@Override
+<anchor xml:id="__game_screen_8java_source_1l00166"/>00166 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;dispose()&#32;{
+<anchor xml:id="__game_screen_8java_source_1l00167"/>00167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;dispose&#32;everything&#32;this&#32;screen&#32;created</emphasis>
+<anchor xml:id="__game_screen_8java_source_1l00168"/>00168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(batch&#32;!=&#32;<emphasis role="keyword">null</emphasis>)&#32;batch.dispose();
+<anchor xml:id="__game_screen_8java_source_1l00169"/>00169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(font&#32;!=&#32;<emphasis role="keyword">null</emphasis>)&#32;font.dispose();
+<anchor xml:id="__game_screen_8java_source_1l00170"/>00170 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00171"/>00171 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00172"/>00172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(backgroundTexture&#32;!=&#32;<emphasis role="keyword">null</emphasis>)&#32;backgroundTexture.dispose();
+<anchor xml:id="__game_screen_8java_source_1l00173"/>00173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(playerTexture&#32;!=&#32;<emphasis role="keyword">null</emphasis>)&#32;playerTexture.dispose();
+<anchor xml:id="__game_screen_8java_source_1l00174"/>00174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(acornTexture&#32;!=&#32;<emphasis role="keyword">null</emphasis>)&#32;acornTexture.dispose();
+<anchor xml:id="__game_screen_8java_source_1l00175"/>00175 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00176"/>00176 &#32;&#32;&#32;&#32;
+<anchor xml:id="__game_screen_8java_source_1l00177"/>00177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(collectSound&#32;!=&#32;<emphasis role="keyword">null</emphasis>)&#32;collectSound.dispose();
+<anchor xml:id="__game_screen_8java_source_1l00178"/>00178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(gameplayMusic&#32;!=&#32;<emphasis role="keyword">null</emphasis>)&#32;gameplayMusic.dispose();
+<anchor xml:id="__game_screen_8java_source_1l00179"/>00179 
+<anchor xml:id="__game_screen_8java_source_1l00180"/>00180 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;player&#32;and&#32;acornManager&#32;do&#32;not&#32;own&#32;textures/sounds&#32;so&#32;no&#32;double-dispose</emphasis>
+<anchor xml:id="__game_screen_8java_source_1l00181"/>00181 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__game_screen_8java_source_1l00182"/>00182 }
+<anchor xml:id="__game_screen_8java_source_1l00183"/>00183 &#32;&#32;&#32;&#32;
+</programlisting></section>

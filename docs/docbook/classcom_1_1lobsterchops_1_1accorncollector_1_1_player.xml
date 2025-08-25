@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1_player" xml:lang="en-US">
+<title>com.lobsterchops.accorncollector.Player Class Reference</title>
+<indexterm><primary>com.lobsterchops.accorncollector.Player</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_player_1adf3e4ff8794ad2084182d01f2105e88c">Player</link> (Texture texture, float startX, float startY)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_player_1a6551b03c19cfa481e8913aaee8b5790d">update</link> (float delta, FitViewport viewport)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_player_1a52ba9795b7dc56891b153a1b8732840d">draw</link> (SpriteBatch batch)</para>
+</listitem>
+            <listitem><para>Rectangle <link linkend="_classcom_1_1lobsterchops_1_1accorncollector_1_1_player_1ade3039bfc4c34f0ae51f8ecaf75a3abb">getBounds</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Encapsulates the player sprite, input handling and bounds. </para>
+<para>
+Definition at line <link linkend="__player_8java_source_1l00016">16</link> of file <link linkend="__player_8java_source">Player.java</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1_player_1adf3e4ff8794ad2084182d01f2105e88c"/><section>
+    <title>Player()</title>
+<indexterm><primary>Player</primary><secondary>com.lobsterchops.accorncollector.Player</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.Player</primary><secondary>Player</secondary></indexterm>
+<para><computeroutput>com.lobsterchops.accorncollector.Player.Player (Texture texture, float startX, float startY)</computeroutput></para><para>
+Definition at line <link linkend="__player_8java_source_1l00022">22</link> of file <link linkend="__player_8java_source">Player.java</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1_player_1a52ba9795b7dc56891b153a1b8732840d"/><section>
+    <title>draw()</title>
+<indexterm><primary>draw</primary><secondary>com.lobsterchops.accorncollector.Player</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.Player</primary><secondary>draw</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.Player.draw (SpriteBatch batch)</computeroutput></para><para>
+Definition at line <link linkend="__player_8java_source_1l00052">52</link> of file <link linkend="__player_8java_source">Player.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1_player_1ade3039bfc4c34f0ae51f8ecaf75a3abb"/><section>
+    <title>getBounds()</title>
+<indexterm><primary>getBounds</primary><secondary>com.lobsterchops.accorncollector.Player</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.Player</primary><secondary>getBounds</secondary></indexterm>
+<para><computeroutput>Rectangle com.lobsterchops.accorncollector.Player.getBounds ( )</computeroutput></para><para>
+Definition at line <link linkend="__player_8java_source_1l00057">57</link> of file <link linkend="__player_8java_source">Player.java</link>.</para>
+</section>
+<anchor xml:id="_classcom_1_1lobsterchops_1_1accorncollector_1_1_player_1a6551b03c19cfa481e8913aaee8b5790d"/><section>
+    <title>update()</title>
+<indexterm><primary>update</primary><secondary>com.lobsterchops.accorncollector.Player</secondary></indexterm>
+<indexterm><primary>com.lobsterchops.accorncollector.Player</primary><secondary>update</secondary></indexterm>
+<para><computeroutput>void com.lobsterchops.accorncollector.Player.update (float delta, FitViewport viewport)</computeroutput></para><para>
+Definition at line <link linkend="__player_8java_source_1l00029">29</link> of file <link linkend="__player_8java_source">Player.java</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+core/src/main/java/com/lobsterchops/accorncollector/Player.java</section>
+</section>
